@@ -9,9 +9,6 @@ using OpenQA.Selenium.Chrome;
 
 namespace SeleniumWD
 {
-   /// <summary>
-   ///  Наследование?
-   /// </summary>
     [TestFixture]
     public class TestClass
     {
