@@ -12,12 +12,10 @@ namespace SeleniumWD
     [TestFixture]
     public class TestClass
     {
-        //IWebDriver driver = new ChromeDriver();  
-        public IWebDriver driver;
+        IWebDriver driver = new ChromeDriver();  
         [OneTimeSetUp]
         public void Init()
         {
-            driver = new ChromeDriver();
             driver.Url = "http://localhost:3030/admin";
         }
 
