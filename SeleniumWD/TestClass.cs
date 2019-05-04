@@ -42,18 +42,8 @@ namespace SeleniumWD
             Assert.IsTrue(loginPage.isLoginPerformedSucceslly(), "Login is failed.");
         }
 
-        [TestCase("Test", "http://localhost:3030/admin", "Test testing."), Order(2)]
-        [TestCase("Test2", "https://www.w3schools.com/xml/xpath_axes.asp", "Tsdfsdfsdfsdf.")]
-        [TestCase("Test3", "https://stackoverflow.com/", "123345467890")]
-        [TestCase("Test4", "https://stackoverflow.com/", "fuuuuuuuu!@#$%^&*().")]
-        [TestCase("Test5", "ert", "ad")]
-        [TestCase("Test5", "qweqwe", "ad")]
-        [TestCase("Test6", "ertert", "werer testing.")]
-        [TestCase("Test7", "werwe/", "sdfsdfsdfsdfsdfsdfsdfadfqwe4rqwefasdfest testing.")]
-        [TestCase("Test7", "werwerw/", "rwerwehvb testing.")]
-        [TestCase("12345", "werwesdfrw/", "rwehvb testing.")]
-        [TestCase("!@#$%^&*()", "w", "rwehvb testing.")]
-        [TestCase("Test8345555533333333333333333334534", "q", "werer testing.")]
+        [TestCaseSource(typeof(DataSource), "DataTest"), Order(2)]
+
         public void NewPost(string title, string url, string body)
         {
             PostEditorPage postEditor = new PostEditorPage(driver);
