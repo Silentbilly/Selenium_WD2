@@ -43,7 +43,6 @@ namespace SeleniumWD
         }
 
         [TestCaseSource(typeof(DataSource), "DataTest"), Order(2)]
-
         public void NewPost(string title, string url, string body)
         {
             PostEditorPage postEditor = new PostEditorPage(driver);
