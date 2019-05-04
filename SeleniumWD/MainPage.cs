@@ -11,19 +11,14 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace SeleniumWD
 {
-    class MainPage
+    class MainPage : BasePage
     {
         private IWebDriver driver;
-        public MainPage(IWebDriver driver)
+        public MainPage(IWebDriver driver) : base(driver)
         {
             PageFactory.InitElements(driver, this);
             this.driver = driver;
         }
-
-        [FindsBy(How = How.XPath, Using = ".//*[@class='header-logout']")]
-        private IWebElement logoutButton;
-        [FindsBy(How = How.XPath, Using = ".//*[@type='submit']")]
-        private IWebElement loginButton;
 
         public void Logout()
         {

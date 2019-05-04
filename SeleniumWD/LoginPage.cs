@@ -10,21 +10,17 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace SeleniumWD
 {
-    class LoginPage
+    class LoginPage : BasePage
     {
         private IWebDriver driver;
-        public LoginPage(IWebDriver driver)
+        public LoginPage(IWebDriver driver) : base(driver)
         {
             PageFactory.InitElements(driver, this);               
             this.driver = driver;
         }
 
-        [FindsBy(How = How.XPath, Using = ".//*[@type='text']")]
-        private IWebElement loginField;
         [FindsBy(How = How.XPath, Using = ".//*[@type='password']")]
         private IWebElement passwordField;
-        [FindsBy(How = How.XPath, Using = ".//*[@type='submit']")]
-        private IWebElement loginButton;
 
         public LoginPage SetLogin(String login)
         {
