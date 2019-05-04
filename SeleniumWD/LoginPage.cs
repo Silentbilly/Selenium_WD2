@@ -52,6 +52,5 @@ namespace SeleniumWD
                 return true;
             }
         }
-    }
-        
+    }    
 }
