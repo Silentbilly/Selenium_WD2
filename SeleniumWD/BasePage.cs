@@ -12,7 +12,7 @@ namespace SeleniumWD
 {
     public class BasePage
     {
-        public IWebDriver driver;
+        protected IWebDriver driver;
 
         public BasePage(IWebDriver driver)
         {
@@ -21,10 +21,10 @@ namespace SeleniumWD
         }
 
         [FindsBy(How = How.XPath, Using = ".//*[@type='submit']")]
-        public IWebElement loginButton;
+        protected IWebElement loginButton;
         [FindsBy(How = How.XPath, Using = ".//*[@class='header-logout']")]
-        public IWebElement logoutButton;
+        protected IWebElement logoutButton;
         [FindsBy(How = How.XPath, Using = ".//*[@type='text']")]
-        public IWebElement loginField;
+        protected IWebElement loginField;
     }
 }

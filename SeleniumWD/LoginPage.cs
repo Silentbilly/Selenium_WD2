@@ -12,7 +12,6 @@ namespace SeleniumWD
 {
     class LoginPage : BasePage
     {
-        private IWebDriver driver;
         public LoginPage(IWebDriver driver) : base(driver)
         {
             PageFactory.InitElements(driver, this);               

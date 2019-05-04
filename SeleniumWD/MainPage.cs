@@ -13,7 +13,6 @@ namespace SeleniumWD
 {
     class MainPage : BasePage
     {
-        private IWebDriver driver;
         public MainPage(IWebDriver driver) : base(driver)
         {
             PageFactory.InitElements(driver, this);

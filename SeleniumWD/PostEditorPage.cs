@@ -10,10 +10,9 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace SeleniumWD
 {
-    class PostEditorPage
+    class PostEditorPage : BasePage
     {
-        private IWebDriver driver;
-        public PostEditorPage(IWebDriver driver)
+        public PostEditorPage(IWebDriver driver) : base(driver)
         {
             PageFactory.InitElements(driver, this);
             this.driver = driver;
