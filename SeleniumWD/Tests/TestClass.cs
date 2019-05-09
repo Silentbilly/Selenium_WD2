@@ -6,6 +6,8 @@ using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using SeleniumWD.BO;
+using SeleniumWD.BusinessFunctions;
 
 namespace SeleniumWD
 {
@@ -36,8 +38,13 @@ namespace SeleniumWD
         [Test, Order(1)]                  
         public void Login()
         {
+            User user = TestUsersGenerator.GenerateValidUser();
+            LoginFunctions loginFunc = new LoginFunctions(driver);
+
+            loginFunc.Login(user);
+
             LoginPage loginPage = new LoginPage(driver);
-            loginPage.Login("admin", "admin");
+
             Thread.Sleep(1000); 
             Assert.IsTrue(loginPage.isLoginPerformedSucceslly(), "Login is failed.");
         }
