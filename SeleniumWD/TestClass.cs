@@ -16,7 +16,7 @@ namespace SeleniumWD
         [OneTimeSetUp]
         public void Init()
         {
-            driver.Url = "http://localhost:3030/admin";
+            driver.Url = "http://localhost:3030/admin";//
         }
 
         [OneTimeTearDown]
