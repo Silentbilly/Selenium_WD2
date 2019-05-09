@@ -52,12 +52,15 @@ namespace SeleniumWD
         [Test, Order(2)]
         public void NewPost()
         {
+            Post post = PostGenerator.GenerateValidPost();
+            PostFunctions postFunc = new PostFunctions(driver);
+            postFunc.Publish(post);
+
             PostEditorPage postEditor = new PostEditorPage(driver);
-            
             driver.Url = "http://localhost:3030/admin";
             Thread.Sleep(300);
-            Assert.AreEqual(title, postEditor.getPostedTitle());   
-            Assert.AreEqual(body, postEditor.getPostedBody());
+            Assert.AreEqual(post.GetTitle(), postEditor.getPostedTitle());   
+            Assert.AreEqual(post.GetBody(), postEditor.getPostedBody());
         }
 
         [Test]

@@ -10,7 +10,11 @@ namespace SeleniumWD.BO
     {
         public static Post GenerateValidPost()
         {
-            return new Post("Test", "http://localhost:3030/admin", "AbCDFG HIJkLMNOP QrStUvWxYz1234567890!@#%^&*()");
+            return new Post("Test", "http://localhost:3030/admin", "AbCDFG HIJkLMNOP QrStUvWxYz1234567890!@#%^&*()"); // & - ?
+        }
+        public static Post GenerateValidPost2()
+        {
+            return new Post("Test", "http://localhost:3030/admin", "AbCDFG HIJkLMNOP QrStUvWxYz1234567890!@#");
         }
     }
 }
