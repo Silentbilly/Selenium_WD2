@@ -52,7 +52,7 @@ namespace SeleniumWD
         [Test, Order(2)]
         public void NewPost()
         {
-            Post post = PostGenerator.GenerateValidPost();
+            Post post = PostGenerator.GenerateValidPost2();
             PostFunctions postFunc = new PostFunctions(driver);
             postFunc.Publish(post);
 
