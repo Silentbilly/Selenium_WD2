@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace SeleniumWD.BO
 {
-    public static class PostGenerator
+    class PostGenerator
     {
-        public static object[] DataTest = new object[]
+        public static Post GenerateValidPost()
         {
-            new Post("Test", "http://localhost:3030/admin", "Test testing.")        
-        };
-
+            return new Post("Test", "http://localhost:3030/admin", "AbCDFG HIJkLMNOP QrStUvWxYz1234567890!@#%^&*()");
+        }
     }
 }

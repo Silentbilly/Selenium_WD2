@@ -49,11 +49,11 @@ namespace SeleniumWD
             Assert.IsTrue(loginPage.isLoginPerformedSucceslly(), "Login is failed.");
         }
 
-        [TestCaseSource(typeof(DataSource), "DataTest"), Order(2)]
-        public void NewPost(string title, string url, string body)
+        [Test, Order(2)]
+        public void NewPost()
         {
             PostEditorPage postEditor = new PostEditorPage(driver);
-            postEditor.Publish(title, url, body);
+            
             driver.Url = "http://localhost:3030/admin";
             Thread.Sleep(300);
             Assert.AreEqual(title, postEditor.getPostedTitle());   

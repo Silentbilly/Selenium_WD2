@@ -50,6 +50,7 @@
     <Compile Include="BO\Post.cs" />
     <Compile Include="BO\PostGenerator.cs" />
     <Compile Include="BusinessFunctions\LoginFunctions.cs" />
+    <Compile Include="BusinessFunctions\PostFunctions.cs" />
     <Compile Include="Pages\BasePage.cs" />
     <Compile Include="BO\TestUsersGenerator.cs" />
     <Compile Include="BO\User.cs" />
