@@ -30,5 +30,9 @@ namespace SeleniumWD.BO
         {
             return body;
         }
+        public object GetObject()
+        {
+            return new object[] { title, url, body };
+        }
     }
 }
