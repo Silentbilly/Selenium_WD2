@@ -8,7 +8,7 @@ namespace SeleniumWD.BO
 {
     class PostGenerator
     {
-        public static object[] post = new object[]
+        public static object[] ValidPost = new object[]
         {
             new Post("Test", "http://localhost:3030/admin", "Test testing."                   ).GetObject(),
             new Post("Test2", "https://www.w3schools.com/xml/xpath_axes.asp", "Tsdfsdfsdfsdf.").GetObject(),

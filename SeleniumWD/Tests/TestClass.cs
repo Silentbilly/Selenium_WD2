@@ -49,7 +49,7 @@ namespace SeleniumWD
             Assert.IsTrue(loginPage.isLoginPerformedSucceslly(), "Login is failed.");
         }
 
-        [TestCaseSource(typeof(PostGenerator), "post"), Order(2)]
+        [TestCaseSource(typeof(PostGenerator), "ValidPost"), Order(2)]
         public void NewPost(string title, string url, string body)
         {
             PostEditorPage postEditor = new PostEditorPage(driver);
