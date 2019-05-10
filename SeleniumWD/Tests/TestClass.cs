@@ -45,15 +45,17 @@ namespace SeleniumWD
 
             LoginPage loginPage = new LoginPage(driver);
 
-            Thread.Sleep(1000); 
+            Thread.Sleep(300); 
             Assert.IsTrue(loginPage.isLoginPerformedSucceslly(), "Login is failed.");
         }
 
         [TestCaseSource(typeof(PostGenerator), "ValidPost"), Order(2)]
         public void NewPost(string title, string url, string body)
         {
+            Post post = new Post(title, url, body);
             PostEditorPage postEditor = new PostEditorPage(driver);
-            postEditor.Publish(title, url, body);
+            PostFunctions postFunc = new PostFunctions(driver);
+            postFunc.Publish(post);
             driver.Url = "http://localhost:3030/admin";
             Thread.Sleep(300);
             Assert.AreEqual(title, postEditor.getPostedTitle());
