@@ -66,7 +66,8 @@ namespace SeleniumWD
         public void Logout()
         {
             MainPage logout = new MainPage(driver);
-            logout.Logout();
+            LogoutFunction logoutFunc = new LogoutFunction(driver);
+            logoutFunc.Logout();
             Assert.IsTrue(logout.isLogoutPerformedSucceslly(), "Logout is failed.");
         } 
     }
