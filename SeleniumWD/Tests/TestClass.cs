@@ -20,7 +20,7 @@ namespace SeleniumWD
         [OneTimeSetUp]
         public void Init()
         {
-            goPage.GoToHomePage();
+            goPage.GoHomePage();
         }
 
         [OneTimeTearDown]
@@ -58,7 +58,7 @@ namespace SeleniumWD
             PostEditorPage postEditor = new PostEditorPage(driver);
             PostFunctions postFunc = new PostFunctions(driver);
             postFunc.Publish(post);
-            goPage.GoToHomePage();
+            goPage.GoHomePage();
             Thread.Sleep(300);
             Assert.AreEqual(title, postEditor.getPostedTitle());
             Assert.AreEqual(body, postEditor.getPostedBody());

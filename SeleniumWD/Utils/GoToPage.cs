@@ -16,7 +16,7 @@ namespace SeleniumWD.Utils
             PageFactory.InitElements(driver, this);
             this.driver = driver;
         }
-        public void GoToHomePage()
+        public void GoHomePage()
         {
             driver.Url = "http://localhost:3030/admin";
         }
