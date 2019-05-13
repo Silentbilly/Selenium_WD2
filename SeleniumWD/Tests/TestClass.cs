@@ -31,7 +31,7 @@ namespace SeleniumWD
         [TearDown] 
         public void AfterTest()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(300);
         }
 
         // Tests.
@@ -46,7 +46,7 @@ namespace SeleniumWD
             LoginPage loginPage = new LoginPage(driver);
 
             Thread.Sleep(300); 
-            Assert.IsTrue(loginPage.isLoginPerformedSucceslly(), "Login is failed.");
+            Assert.IsTrue(loginPage.IsLoginPerformedSucceslly(), "Login is failed.");
         }
 
         [TestCaseSource(typeof(PostGenerator), "ValidPost"), Order(2)]
@@ -68,7 +68,7 @@ namespace SeleniumWD
             MainPage logout = new MainPage(driver);
             LogoutFunction logoutFunc = new LogoutFunction(driver);
             logoutFunc.Logout();
-            Assert.IsTrue(logout.isLogoutPerformedSucceslly(), "Logout is failed.");
+            Assert.IsTrue(logout.IsLogoutPerformedSucceslly(), "Logout is failed.");
         } 
     }
 }
