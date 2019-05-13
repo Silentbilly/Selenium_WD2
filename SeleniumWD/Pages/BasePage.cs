@@ -21,10 +21,23 @@ namespace SeleniumWD
         }
 
         [FindsBy(How = How.XPath, Using = ".//*[@type='submit']")]
-        protected IWebElement loginButton;
+        private IWebElement loginButton;
         [FindsBy(How = How.XPath, Using = ".//*[@class='header-logout']")]
-        protected IWebElement logoutButton;
+        private IWebElement logoutButton;
         [FindsBy(How = How.XPath, Using = ".//*[@type='text']")]
-        protected IWebElement loginField;
+        private IWebElement loginField;
+
+        public IWebElement GetLoginButton()
+        {
+            return loginButton;
+        }
+        public IWebElement GetLogoutButton()
+        {
+            return logoutButton;
+        }
+        public IWebElement GetLoginField()
+        {
+            return loginField;
+        }
     }
 }

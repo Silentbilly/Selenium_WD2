@@ -23,7 +23,7 @@ namespace SeleniumWD
 
         public LoginPage SetLogin(String login)
         {
-            new Actions(driver).SendKeys(loginField, login).Build().Perform();
+            new Actions(driver).SendKeys(GetLoginField(), login).Build().Perform();
             return this;                                                       
         }
         public LoginPage SetPassword(String password)
@@ -33,7 +33,7 @@ namespace SeleniumWD
         }
         public LoginPage Login()
         {
-            new Actions(driver).Click().Click(loginButton).Build().Perform();
+            new Actions(driver).Click().Click(GetLoginButton()).Build().Perform();
             return this;
         }
         public void Login(string login, string password)
@@ -45,7 +45,7 @@ namespace SeleniumWD
         {
             try
             {
-                return !loginField.Displayed;
+                return !GetLoginField().Displayed;
             }
             catch (Exception e)
             {

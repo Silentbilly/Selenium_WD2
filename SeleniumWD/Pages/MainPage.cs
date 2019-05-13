@@ -21,14 +21,14 @@ namespace SeleniumWD
 
         public void Logout()
         {
-            logoutButton.Click();
+            GetLogoutButton().Click();
         }
 
         public bool isLogoutPerformedSucceslly()
         {
             try
             {
-                return loginButton.Displayed;
+                return GetLoginButton().Displayed;
             }
             catch (Exception e)
             {
