@@ -8,17 +8,19 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using SeleniumWD.BO;
 using SeleniumWD.BusinessFunctions;
+using SeleniumWD.Utils;
 
 namespace SeleniumWD
 {
     [TestFixture]
     public class TestClass
     {
-        IWebDriver driver = new ChromeDriver();  
+        public static IWebDriver driver = new ChromeDriver();
+        GoToPage goPage = new GoToPage(driver);
         [OneTimeSetUp]
         public void Init()
         {
-            driver.Url = "http://localhost:3030/admin";
+            goPage.GoToHomePage();
         }
 
         [OneTimeTearDown]
@@ -56,7 +58,7 @@ namespace SeleniumWD
             PostEditorPage postEditor = new PostEditorPage(driver);
             PostFunctions postFunc = new PostFunctions(driver);
             postFunc.Publish(post);
-            driver.Url = "http://localhost:3030/admin";
+            goPage.GoToHomePage();
             Thread.Sleep(300);
             Assert.AreEqual(title, postEditor.getPostedTitle());
             Assert.AreEqual(body, postEditor.getPostedBody());
