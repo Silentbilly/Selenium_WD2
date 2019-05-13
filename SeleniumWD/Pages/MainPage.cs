@@ -24,7 +24,7 @@ namespace SeleniumWD
             GetLogoutButton().Click();
         }
 
-        public bool isLogoutPerformedSucceslly()
+        public bool IsLogoutPerformedSucceslly()
         {
             try
             {

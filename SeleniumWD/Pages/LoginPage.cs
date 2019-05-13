@@ -41,7 +41,7 @@ namespace SeleniumWD
             SetLogin(login).SetPassword(password).Login();
         }
 
-        public bool isLoginPerformedSucceslly()
+        public bool IsLoginPerformedSucceslly()
         {
             try
             {
